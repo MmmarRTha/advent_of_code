@@ -18,6 +18,7 @@ defmodule Day02.DayTwoTest do
   describe "part_01/0" do
     # This test will depend on your actual input file
     test "returns count of safe reports" do
+      assert DayTwo.part_01() == 269
       result = DayTwo.part_01()
       assert is_integer(result)
     end
@@ -54,6 +55,12 @@ defmodule Day02.DayTwoTest do
     test "returns false for non-monotonic sequence" do
       refute DayTwo.is_safe?([1, 3, 2])
       refute DayTwo.is_safe?([3, 1, 2])
+    end
+  end
+
+  describe "part_02/0" do
+    test "returns correct solution for puzzle input" do
+      assert DayTwo.part_02() == 337
     end
   end
 end
