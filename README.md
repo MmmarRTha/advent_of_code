@@ -11,13 +11,13 @@ This repository contains my personal solutions for the [Advent of Code](https://
 advent_of_code/
 │
 ├── lib/                  # Elixir source code
-│   ├── day_01/
-│   ├── day_02/
+│   ├── day01/day_one.ex
+│   ├── day02/day_two.ex
 │   └── ...
 │
 ├── test/                 # Test files for solutions
-│   ├── day_01_test.exs
-│   ├── day_02_test.exs
+│   ├── day_01/day_one_test.exs
+│   ├── day_02/day_two_test.exs
 │   └── ...
 │
 ├── mix.exs               # Project configuration
@@ -68,11 +68,12 @@ advent_of_code/
 Each day's solution can be run individually. For example:
 
 ```bash
-# Run specific day's solution
-mix run lib/day_01/solution.ex
+# Run specific day's part solution
+iex -S mix
+iex(1)> Day01.DayOne.part_01
 
 # Run tests for a specific day
-mix test test/day_01_test.exs
+mix test test/day_one/day_one_test.exs
 ```
 
 ## 🌟 Advent of Code
