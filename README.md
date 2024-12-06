@@ -34,8 +34,8 @@ advent_of_code/
 
 | Day | Challenge | Part 1 | Part 2 | Status |
 |-----|-----------|--------|--------|--------|
-| 1   | Report Repair | ✅ | ✅ | Completed |
-| 2   | Password Philosophy | ✅ | ✅ | Completed |
+| 1   | Historian Hysteria | ✅ | ✅ | Completed |
+| 2   | Red-Nosed Reports | ✅ | ✅ | Completed |
 | ... | ... | ... | ... | ... |
 
 ## 🚦 Getting Started
