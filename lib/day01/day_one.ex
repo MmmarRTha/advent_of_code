@@ -21,7 +21,7 @@ defmodule Day01.DayOne do
 
   ## Example:
 
-      iex> DayOne.day_one_part_one()
+      iex> DayOne.part_01()
       2176849
 
   """
@@ -31,7 +31,7 @@ defmodule Day01.DayOne do
     String.split(contents, "\n", trim: true)
   end
 
-  def day_one_part_one do
+  def part_01 do
     {left_nums, right_nums} =
       load_input()
       |> extract_and_accumulate_pairs()
@@ -68,10 +68,10 @@ defmodule Day01.DayOne do
 
    ## Example:
 
-      iex> DayOne.day_one_part_two()
+      iex> DayOne.part_02()
       23384288
   """
-  def day_one_part_two do
+  def part_02 do
     {left_nums, right_nums} =
       load_input()
       |> extract_and_accumulate_pairs()
