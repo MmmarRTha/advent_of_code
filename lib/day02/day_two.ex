@@ -4,7 +4,7 @@ defmodule Day02.DayTwo do
     String.split(contents, "\n", trim: true)
   end
 
-  @doc"""
+  @doc """
   Solves part one of day 2's puzzle.
 
   Analyzes a list of sensor reports where each report is a sequence of numbers.
@@ -48,16 +48,16 @@ defmodule Day02.DayTwo do
     |> Enum.all?(fn [a, b] -> a - b > 0 and a - b <= 3 end)
   end
 
-@doc """
-  Solves part two of day 2's puzzle.
+  @doc """
+    Solves part two of day 2's puzzle.
 
-  Returns the total count of reports that are safe or can be made safe by removing one number.
+    Returns the total count of reports that are safe or can be made safe by removing one number.
 
-  ## Example:
+    ## Example:
 
-    iex(1)> Day02.DayTwo.part_02
-    337
-"""
+      iex(1)> Day02.DayTwo.part_02
+      337
+  """
   def part_02 do
     load_input()
     |> Enum.map(&parse_report/1)
