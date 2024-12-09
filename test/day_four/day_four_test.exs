@@ -80,4 +80,45 @@ defmodule DayFour.DayFourTest do
       assert result == 2654
     end
   end
+
+  describe "part_02/0" do
+    test "matches example output" do
+      assert DayFour.part_02() == 1990
+    end
+  end
+
+  describe "count_xmas_x_patterns/1" do
+    test "finds simple X pattern" do
+      grid = [
+        [".", ".", ".", ".", "."],
+        [".", "M", ".", "M", "."],
+        [".", ".", "A", ".", "."],
+        [".", "S", ".", "S", "."],
+        [".", ".", ".", ".", "."]
+      ]
+      assert DayFour.count_xmas_x_patterns(grid) == 1
+    end
+
+    test "finds reversed MAS pattern" do
+      grid = [
+        [".", ".", ".", ".", "."],
+        [".", "S", ".", "S", "."],
+        [".", ".", "A", ".", "."],
+        [".", "M", ".", "M", "."],
+        [".", ".", ".", ".", "."]
+      ]
+      assert DayFour.count_xmas_x_patterns(grid) == 1
+    end
+
+    test "finds multiple X patterns" do
+      grid = [
+        [".", "M", ".", "M", "."],
+        [".", ".", "A", ".", "."],
+        [".", "S", ".", "S", "."],
+        [".", ".", "A", ".", "."],
+        [".", "M", ".", "M", "."]
+      ]
+      assert DayFour.count_xmas_x_patterns(grid) == 2
+    end
+  end
 end

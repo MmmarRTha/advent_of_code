@@ -75,4 +75,70 @@ defmodule Day04.DayFour do
     |> Enum.at(row)
     |> Enum.at(col)
   end
+
+  @doc """
+   Solves part two of day 4's puzzle.
+
+   ## Example:
+
+     iex> Day04.DayFour.part_02()
+     1990
+  """
+  def part_02 do
+    load_input()
+    |> Enum.map(&String.graphemes/1)
+    |> count_xmas_x_patterns()
+  end
+
+  def count_xmas_x_patterns(grid) do
+    height = length(grid)
+    width = length(Enum.at(grid, 0))
+
+    for row <- 1..(height - 2),
+        col <- 1..(width - 2),
+        reduce: 0 do
+      acc -> acc + check_x_pattern(grid, row, col)
+    end
+  end
+
+  defp check_x_pattern(grid, row, col) do
+    center_char = get_char(grid, row, col)
+
+    if center_char == "A" do
+      x_patterns = [
+        # Top-left to bottom-right + Top-right to bottom-left
+        {[{-1, -1}, {1, 1}], [{-1, 1}, {1, -1}]},
+        # Top-right to bottom-left + Top-left to bottom-right
+        {[{-1, 1}, {1, -1}], [{-1, -1}, {1, 1}]}
+      ]
+
+      Enum.any?(x_patterns, fn {dir1, dir2} ->
+        check_mas_pair(grid, row, col, dir1, dir2)
+      end)
+      |> if(do: 1, else: 0)
+    else
+      0
+    end
+  end
+
+  defp check_mas_pair(grid, row, col, dir1, dir2) do
+    check_single_mas(grid, row, col, dir1) and check_single_mas(grid, row, col, dir2)
+  end
+
+  defp check_single_mas(grid, row, col, [{dr1, dc1}, {dr2, dc2}]) do
+    # Check both forward and backward directions
+    forward = [
+      get_char(grid, row + dr1, col + dc1) == "M",
+      get_char(grid, row, col) == "A",
+      get_char(grid, row + dr2, col + dc2) == "S"
+    ]
+
+    backward = [
+      get_char(grid, row + dr1, col + dc1) == "S",
+      get_char(grid, row, col) == "A",
+      get_char(grid, row + dr2, col + dc2) == "M"
+    ]
+
+    Enum.all?(forward) or Enum.all?(backward)
+  end
 end
