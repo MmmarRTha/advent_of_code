@@ -37,7 +37,7 @@ advent_of_code/
 | 1   | Historian Hysteria | ✅ | ✅ | Completed |
 | 2   | Red-Nosed Reports | ✅ | ✅ | Completed |
 | 3   | Mull It Over | ✅ | ✅ | Completed |
-| 4   | Ceres Search | ✅ | ... | WIP |
+| 4   | Ceres Search | ✅ | ✅ | Completed |
 | 5   | Print Queue | ... | ... | ... |
 | 6   | Guard Gallivant | ... | ... | ... |
 
